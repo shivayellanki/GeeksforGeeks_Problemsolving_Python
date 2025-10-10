@@ -1,0 +1,10 @@
+from collections import Counter
+class Solution:
+    def majorityElement(self, arr):
+        n=len(arr)
+        counter=Counter(arr)
+        num,count=counter.most_common(1)[0]
+        if count >n//2:
+            return num
+        else:
+            return -1
