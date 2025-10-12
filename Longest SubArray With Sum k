@@ -1,0 +1,15 @@
+class Solution:
+    def longestSubarray(self, arr, k):
+        mp={}
+        res=0
+        prefsum=0
+        for i in range(len(arr)):
+            prefsum+=arr[i]
+            if prefsum==k:
+                res=i+1
+            elif (prefsum-k)  in mp:
+                res=max(res,i-mp[prefsum-k])
+            if prefsum not in mp:
+                mp[prefsum]=i
+        return res        
+                
