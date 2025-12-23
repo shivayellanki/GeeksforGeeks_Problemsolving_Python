@@ -1,0 +1,9 @@
+class Solution:
+    def helper(self, i, n):
+        if i > n:
+            return
+        print("GFG", end=" ")
+        self.helper(i + 1, n)
+
+    def printGfg(self, N):
+        self.helper(1, N)
