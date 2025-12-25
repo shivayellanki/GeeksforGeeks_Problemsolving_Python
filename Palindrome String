@@ -1,0 +1,11 @@
+class Solution:
+    def isPalindrome(self, s):
+        return self.pal(s,0,len(s)-1)
+    def pal(self,s,l,r):
+        if l >=r:
+            return True
+        if s[l] != s[r]:
+            return False
+        return self.pal(s,l+1,r-1)   
+        
+        
